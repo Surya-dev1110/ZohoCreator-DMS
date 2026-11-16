@@ -88,6 +88,15 @@ Building an AI-powered conversational assistant using **n8n, Telegram Bot, and Z
 - Automates business operations through conversational workflows.
 - [View n8n Zoho MCP Chatbot Implementation](https://github.com/Surya-dev1110/Ai-Automation/tree/main/N8n/Zoho%20MCP%20chat%20bot%20DMS)
 
+### Zia-Powered AI Features
+
+Implemented AI-assisted functionality using **Zoho Creator Zia Tasks** to simplify clinical documentation and content generation.
+
+- **Clinical Report Summarization:** Generate concise summaries of patient clinical reports to support quick review of clinical information.
+- **Notification Template Generation:** Generate contextual notification message drafts using predefined keywords and instructions, supporting structured HTML-formatted content.
+
+These features leverage prompt-based AI processing directly within Zoho Creator using Deluge.
+
 ## Dashboards & Analytics
 
 Role-specific dashboards designed for different organizational responsibilities:
@@ -123,6 +132,7 @@ Analytical reports cover appointment trends, revenue trends, patient statistics,
 - Telegram Bot API
 - UltraMsg WhatsApp API
 - QR Code Generation
+
 
 ## Project Highlights
 
