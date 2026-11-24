@@ -1,0 +1,36 @@
+// Zoho Survey - On Submission Function
+data = Map();
+// Appointment reference
+data.put("sessionID",survey.get("question").get("CTM").get("response"));
+// Survey response reference
+data.put("responseID",survey.get("responseId"));
+// 1. Provider Rating
+data.put("providerRating",survey.get("question").get("CTO").get("response"));
+// 2. Branch Rating
+data.put("branchRating",survey.get("question").get("CTQ").get("response"));
+// 3. Staff Rating
+data.put("staffRating",survey.get("question").get("CTR").get("response"));
+// 4. Overall Rating
+data.put("overallRating",survey.get("question").get("CTS").get("response"));
+// 5. Comments
+data.put("comments",survey.get("question").get("CTT").get("response"));
+// Headers
+headers = Map();
+headers.put("Content-Type","application/json");
+headers.put("Accept","application/json");
+// Send to Zoho Creator
+res = invokeurl
+[
+	url :"https://www.zohoapis.in/creator/custom/suryadevdss11/ReceivePatientFeedback?publickey=C*******wk"
+	type :POST
+	body:data.toString()
+	headers:headers
+];
+info data;
+info res;
+// commentSentiment = zoho.ai.analyseSentiment(survey.get("question").get("CTT").get("response"));
+// info commentSentiment;
+// Post Response to cliq channel
+message = "A new response just came in to your survey [" + survey.get("name") + "](" + survey.get("responseURL") + ")";
+channelName = "patientfeedbacksurvey";
+zoho.cliq.postToChannel(channelName,message,"cliq_connection_survey");
